@@ -19,20 +19,20 @@ import com.devsuperior.dspesquisa.entities.enums.Platform;
 @Table(name = "tb_game")
 public class Game implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String title;
 	private Platform platform;
-	
+
 	@ManyToOne
-	@JoinColumn(name="genre_id")
+	@JoinColumn(name = "genre_id")
 	private Genre genre;
-	
-	@OneToMany(mappedBy="game")
+
+	@OneToMany(mappedBy = "game")
 	private List<Record> records = new ArrayList<>();
-	
+
 	public Game() {
 	}
 
@@ -72,11 +72,11 @@ public class Game implements Serializable {
 		return genre;
 	}
 
-	public void setGenre(Genre genre) {
+	public void setGenre(Genre genre) { 
 		this.genre = genre;
 	}
-	
-	public List<Record> getRecord() {
+
+	public List<Record> getRecords() {
 		return records;
 	}
 
@@ -104,5 +104,5 @@ public class Game implements Serializable {
 			return false;
 		return true;
 	}
-	
+
 }

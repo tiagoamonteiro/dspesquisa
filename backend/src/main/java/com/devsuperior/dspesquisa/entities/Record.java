@@ -75,8 +75,9 @@ public class Record implements Serializable {
 		return game;
 	}
 
-	public void setGame(Game game) {
-		this.game = game;
+	
+	public void setGame(Game game) { 
+		this.game = game; 
 	}
 
 	@Override
